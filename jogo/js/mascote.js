@@ -1,13 +1,15 @@
+// 
 let yMacote = 360;
 let xMascote = 40;
 let meusPontos = 0;
 let colisao = false;
 
-
+// Mostrar Mascote Cod
 function mostrarMascote() {
-    image(imgMascote, xMascote, yMacote, 50, 50);
+    image(imgMascote, xMascote, yMacote, 30, 30);
 }
 
+// Incluir pontos Cod
 function incluirPontos() {
     
     text(meusPontos, 20,25)
@@ -21,15 +23,17 @@ function incluirPontos() {
 
 }
 
-
+// Movimentar Mascote Cod
 function movimentoMascote() {
     
     if(keyIsDown(UP_ARROW)) {
         yMacote -=5;
+        // Quando clicar para cima trocar sprite
         imgMascote = loadImage("img/Nave_Sprite2.png");  
     }
     if (keyIsDown(DOWN_ARROW)) {
         yMacote +=5;
+        // Quando clicar para baixo trocar sprite
         imgMascote = loadImage("img/Nave-Sprite1.png");
     }
     if (keyIsDown(LEFT_ARROW)) {
@@ -41,12 +45,16 @@ function movimentoMascote() {
 
 } 
 
+// Colisão Mascote Cod
 function verificaColisao(){
     for (let i = 0; i < imagensCarros.length; i = i + 1){
+      // Colisão com especificações dos carros
       colisao = collideRectCircle(xCarros[i], yCarros[i], comprimentoCarros, alturaCarros, xMascote, yMacote, 25)
       if (colisao){
+        // Quando colidir voltar ao ponto inicial
         voltaPontoInicial();
       if (meusPontos > 0){
+        // Quando colidir tirar 1 ponto
         meusPontos -= 1;
       }
       }

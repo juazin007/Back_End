@@ -6,7 +6,7 @@
 // let xCarro3 = 599;
 let xCarros = [599, 599, 599, 599, 599, 599]
 let yCarros = [40, 100, 150, 210, 265, 320]
-let velocidadeCarros = [10, 12, 8.9, 7, 4.7, 3]
+let velocidadeCarros = [2.5, 3.2, 2.6, 3.3, 4.2, 5]
 
 let comprimentoCarros=55;
 let alturaCarros=40;
